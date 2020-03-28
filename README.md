@@ -9,6 +9,7 @@ Objectif : identifier la surmortalité dûe au COVID-19 à la maille départemen
 ## Sources
 
 Fichiers des décès de l'INSEE :
+
 Fichiers des communes et association commune => Departement: geo.api.gouv.fr
 
 ## Méthodologie
@@ -25,4 +26,4 @@ Fichiers des communes et association commune => Departement: geo.api.gouv.fr
 
 
 # Modélisation
-- Attention à 
+- Attention à agréger par année de comptabilisation avant de modéliser. J'ai laissé cette variable pour tenir compte de l'effet de retard dans la prise en compte des décès. L'année de comptabilisation correspond à l'année du fichier annuel des décès. 
