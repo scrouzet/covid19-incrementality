@@ -39,6 +39,17 @@ WORK IN PROGRESS
 - Retraitement de la canicule 2003
 - redressement des données hebdo de l'INSEE pour estimer l'effet de décallage dans la remontée des information (délai entre survenance du délai et comptabilisation par l'INSEE)
 
+## How to
+
+To generate a pickle file ready for analysis based on the years 2010 to 2019:
+
+```bash
+python preprocess.py -f INSEE_deces_2010_2019
+```
+
+This will create a pickle file in a `preprocessed_data` folder containing a pandas dataframe, aggregated by "departement" id number. `weeknumber_year.ipynb` is a simple example notebook to see what the data look like.
+
+
 ## Installation
 
 You need to install git-lfs to retrieve the large data:
