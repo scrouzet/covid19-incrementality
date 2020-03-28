@@ -37,3 +37,27 @@ Fichier de la population au 1er janvier par département : https://www.insee.fr/
 - Modélisation par classe d'age et par département
 - Retraitement de la canicule 2003
 - redressement des données hebdo de l'INSEE pour estimer l'effet de décallage dans la remontée des information (délai entre survenance du délai et comptabilisation par l'INSEE)
+
+## Installation
+
+You need to install git-lfs to retrieve the large data:
+    1. follow the [Installing Git Large File Storage](https://help.github.com/en/github/managing-large-files/installing-git-large-file-storage) guideline
+    2. read the [Configuring Git Large File Storage](https://help.github.com/en/github/managing-large-files/configuring-git-large-file-storage)
+
+Clone the repository:
+```
+    git clone git@github.com:scrouzet/covid19-incrementalite.git
+```
+
+## How to contribute
+
+1. Fork this repo
+2. Commit your code in your forked repo
+3. Do a pull-request on the main repo and ask for code reviewers
+4. Take into account the comments
+
+For contributors
+1. Make a branch "feat-short_name_feature"
+2. Commit your code in this branch
+3. Do a pull-request on the main repo and ask for code reviewers
+4. Take into account the comments
