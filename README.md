@@ -1,39 +1,40 @@
 # covid19-incrementalite
-Etude d'incrementalité des effets du COVID-19.
-Objectif : identifier la surmortalité dûe au COVID-19 à la maille département.
+Study on incrementality of COVID-19 effect.
+Objective : quantify death increase due to COVID-19 in France at a department level.
 
 ## Références
 
 - https://medium.com/@davidbessis/coronavirus-the-core-metrics-we-should-be-looking-at-2ca09a3dc4b1
 
-## Sources
+## Data sources
 
-Fichiers des décès de l'INSEE : https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/
+Death data form INSEE (French Statistic Agency) : https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/
 
-Fichiers des communes et association commune => Departement : geo.api.gouv.fr
+Geography referential (commune and departement) : https://geo.api.gouv.fr
 
-Fichier de la population au 1er janvier par département : https://www.insee.fr/fr/statistiques/1893198
+Population data time serie from INSEE : https://www.insee.fr/fr/statistiques/1893198
 
-# Méthodologie
+# Methodology
 
-## Préparation des données : 
-- Collecte et concaténaton des fichiers annuels (2000=> 2019)
-- Suppression des " remplacées par des espaces
-- Retraitement des dates : élimination des dates invalides : ~
-- filtre sur les dates de décès > 1970
-- jointure sur les codes insee de la commune de décès => Département
-- retraitement pour corriger le cas des arrondissements Lyon, Paris, Marseille (pas un code insee commune)
-- agrégation par Département de décès, date de décès, sexe, age, année de comptabilisation
+## Data preparation : 
+- Collection and concatenation of yearly death data (1990=> 2019)
+- Deleted " replaced with white space
+- retreated  dates : removed lines with invalid birth or death dates (0,72% of cases)
+- fitler death dates> 1970
+- join with geography referential to assiciate commune with department
+- correction of department for specific geographies (Lyon, Paris, Marseille with arrondissement code instead of comune code in INSEE File)
+- Grouping by death department, death date, sex, age, year of observation
 
 ## Colonnes du fichier  : data/INSEE_deces_2010_2019.zip
-- annee_comptabilisation = année du fichier qui contient ces décès (2019 = deces_2019.txt) a noter un décalage entre date de décès et année de comptabilisation en raison du délai de remontée de l'information à l'INSEE
-- sexe : 1 = Homme / 2 = Femme
-- age : arrondi inférieur entre date de décès - date de naissance
-- departement_deces : département rattache à la commune de décès. Attention, qq décès sont comptabilisés sur des départements "hors référentiel départements" : 1% des décès sur le département 99, négligeable sur 98.
-- date_deces : date du décès
-- nb_deces : somme du nombre de personnes décédées, regroupés par (anneee_comptabilisation, sex, age, département,  date_deces)
+- year of observation (annee_comptabilisation) = year of the yearly file where the death has been accounted for. (2019 = deces_2019.txt). Please note that a yearly file contains death dates from previous yeras due to delay in data collection at insee. All files must be concatenated to get a complete view of death for a given year. Duplicate records are already removed.
+- sexe : 1 = Male / 2 = Female
+- age : age at death time
+- departement_deces : department code of the commune where death happend. Note that some department are not valid in the repository : 1% death in "99" departement, non significative death cases in "98" department. The department name and associated region is provided in the geography referential
+- date_deces : death_date
+- nb_deces : count of deceased person, grouped by (anneee_comptabilisation, sex, age, departement_code,  date_deces)
 
 ## Modélisation
+WORK IN PROGRESS
 - Modélisation par classe d'age et par département
 - Retraitement de la canicule 2003
 - redressement des données hebdo de l'INSEE pour estimer l'effet de décallage dans la remontée des information (délai entre survenance du délai et comptabilisation par l'INSEE)
