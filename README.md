@@ -58,13 +58,30 @@ This will create a pickle file in a `preprocessed_data` folder containing a pand
 ## Installation
 
 You need to install git-lfs to retrieve the large data:
-    1. follow the [Installing Git Large File Storage](https://help.github.com/en/github/managing-large-files/installing-git-large-file-storage) guideline
-    2. read the [Configuring Git Large File Storage](https://help.github.com/en/github/managing-large-files/configuring-git-large-file-storage)
+1. follow the [Installing Git Large File Storage](https://help.github.com/en/github/managing-large-files/installing-git-large-file-storage) guideline
+2. read the [Configuring Git Large File Storage](https://help.github.com/en/github/managing-large-files/configuring-git-large-file-storage)
 
-Clone the repository:
-```
-    git clone git@github.com:scrouzet/covid19-incrementalite.git
-```
+The following steps must be performed on a Anaconda prompt console, or 
+alternatively, in a Windows command console that has executed the 
+`C:\Anaconda3\Scripts\activate.bat` command that initializes the `PATH` so that
+the `conda` command is found.
+
+1. Clone the repository:
+    ```
+    $ git clone git@github.com:scrouzet/covid19-incrementality.git
+    $ cd covid19-incrementality
+    ```
+    
+2. Create a virtual environment with all dependencies.
+    ```
+    $ conda env create -f environment.yaml
+    ```
+    
+3. Activate the environment and install this package (optionally with the `-e` flag).
+    ```
+    $ conda activate covid19inc-env
+    $ pip install -e .
+    ```
 
 ## How to contribute
 
