@@ -1,6 +1,6 @@
-# covid19-incrementalite
-Study on incrementality of COVID-19 effect.
-Objective : quantify death increase due to COVID-19 in France at a department level.
+# An incrementality study of the COVID-19 effect in France
+
+Objective : quantify death increase due to COVID-19 in France at the department level.
 
 ## Références
 
@@ -8,15 +8,11 @@ Objective : quantify death increase due to COVID-19 in France at a department le
 
 ## Data sources
 
-Death data form INSEE (French Statistic Agency) : https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/
-
-Geography referential (commune and departement) : https://geo.api.gouv.fr
-
-Population data time serie from INSEE : https://www.insee.fr/fr/statistiques/1893198
-
-Population data time serie from INSEE - 2020-03-27 Weekly update for Covid : https://www.insee.fr/fr/information/4470857
-
-Number of admissions in hospitals due to influanza 2010-2020 from Sante Publique France : (https://www.santepubliquefrance.fr/)
+- Death data form INSEE (French Statistic Agency) : https://www.data.gouv.fr/fr/datasets/fichier-des-personnes-decedees/
+- Geography referential (commune and departement) : https://geo.api.gouv.fr
+- Population data time serie from INSEE : https://www.insee.fr/fr/statistiques/1893198
+- Population data time serie from INSEE - 2020-03-27 Weekly update for Covid : https://www.insee.fr/fr/information/4470857
+- Number of admissions in hospitals due to influanza 2010-2020 from Sante Publique France : (https://www.santepubliquefrance.fr/)
 
 # Methodology
 
