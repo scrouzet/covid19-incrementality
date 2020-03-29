@@ -4,6 +4,7 @@ import pandas as pd
 import argparse
 from pathlib import Path
 import os
+from zipfile import ZipFile
 
 age_intervals = [0, 19, 39, 59, 74, 200]
 dtypes = {'annee_comptabilisation': 'int64',
@@ -13,6 +14,22 @@ dtypes = {'annee_comptabilisation': 'int64',
           'nb_deces': 'int64', 
           'date_deces': 'str'}
 
+
+def extract_archives(filepath, outpudir='.temp/'):
+    """extract zip file to temp folder
+
+    Parameters
+    ----------
+    filename : str
+        name of the .zip file to preprocess including the extension (e.g. ".data/test.zip").
+    outputdir: str (default: "./temp/")
+        folder path for the output extracted file
+    """
+
+    # Create a ZipFile Object and load sample.zip in it
+    with ZipFile(filepath, 'r') as zipObj:
+        # Extract all the contents of zip file in different directory
+        zipObj.extractall(outpudir)
 
 def load_preprocess_df(df_filename):
     df = pd.read_csv(df_filename, sep=';', dtype=dtypes)
