@@ -15,7 +15,7 @@ dtypes = {'annee_comptabilisation': 'int64',
           'date_deces': 'str'}
 
 
-def extract_archives(filepath, outpudir='.temp/'):
+def extract_archives(filepath, outputdir='.temp/'):
     """extract zip file to temp folder
 
     Parameters
@@ -29,7 +29,7 @@ def extract_archives(filepath, outpudir='.temp/'):
     # Create a ZipFile Object and load sample.zip in it
     with ZipFile(filepath, 'r') as zipObj:
         # Extract all the contents of zip file in different directory
-        zipObj.extractall(outpudir)
+        zipObj.extractall(path=outputdir)
 
 def load_preprocess_df(df_filename):
     df = pd.read_csv(df_filename, sep=';', dtype=dtypes)
