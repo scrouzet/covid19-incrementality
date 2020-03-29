@@ -14,6 +14,10 @@ Geography referential (commune and departement) : https://geo.api.gouv.fr
 
 Population data time serie from INSEE : https://www.insee.fr/fr/statistiques/1893198
 
+Population data time serie from INSEE - 2020-03-27 Weekly update for Covid : https://www.insee.fr/fr/information/4470857
+
+Number of admissions in hospitals due to influanza 2010-2020 from Sante Publique France : (https://www.santepubliquefrance.fr/)
+
 # Methodology
 
 ## Data preparation : 
@@ -24,6 +28,7 @@ Population data time serie from INSEE : https://www.insee.fr/fr/statistiques/189
 - join with geography referential to assiciate commune with department
 - correction of department for specific geographies (Lyon, Paris, Marseille with arrondissement code instead of comune code in INSEE File)
 - Grouping by death department, death date, sex, age, year of observation
+- Year 1997 and 2003 should be removed from any analysis (1997 data seem invalid and 2003 is an outlier due to specific heat wave in France in August)
 
 ## Colonnes du fichier  : data/INSEE_deces_2010_2019.zip
 - year of observation (annee_comptabilisation) = year of the yearly file where the death has been accounted for. (2019 = deces_2019.txt). Please note that a yearly file contains death dates from previous yeras due to delay in data collection at insee. All files must be concatenated to get a complete view of death for a given year. Duplicate records are already removed.
