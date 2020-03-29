@@ -1,8 +1,8 @@
-# An incrementality study of the COVID-19 effect in France
+# An incrementality study of the impact of COVID-19 in France
 
-Objective : quantify death increase due to COVID-19 in France at the department level.
+Aim: quantify death increase due to COVID-19 in France at the department level.
 
-## Références
+## References
 
 - https://medium.com/@davidbessis/coronavirus-the-core-metrics-we-should-be-looking-at-2ca09a3dc4b1
 
@@ -36,8 +36,7 @@ Objective : quantify death increase due to COVID-19 in France at the department 
 
 ## Modélisation
 WORK IN PROGRESS
-- Modélisation par classe d'age et par département
-- Retraitement de la canicule 2003
+- Model by age group at the level of French *départements*
 - redressement des données hebdo de l'INSEE pour estimer l'effet de décallage dans la remontée des information (délai entre survenance du délai et comptabilisation par l'INSEE)
 
 ## How to
