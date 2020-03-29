@@ -1,6 +1,7 @@
 from covid19lib.data import preprocess_data, extract_archives
 import os
 import sys
+import glob
 
 if __name__ == '__main__':
     PATH = os.path.dirname(os.path.abspath(__file__))
@@ -16,4 +17,5 @@ if __name__ == '__main__':
             preprocess_data(str.split(file, sep=".")[0], inputdir=tmpdir, outputdir=outputdir)
 
 
-    os.remove(tmpdir)
+    [os.remove(file) for file in glob.glob(os.path.join(tmpdir, "*.csv"))]
+
