@@ -63,8 +63,8 @@ the `conda` command is found.
 
 1. Clone the repository:
     ```
-     $ git clone git@github.com:scrouzet/covid19-incrementality.git
-     $ cd covid19-incrementality
+    $ git clone git@github.com:scrouzet/covid19-incrementality.git
+    $ cd covid19-incrementality
     ```
     
 2. Create a virtual environment with all dependencies.
@@ -72,8 +72,7 @@ the `conda` command is found.
     $ conda env create -f environment.yaml
     ```
     
-3. Activate the environment and install this package (optionally with the `-e` 
-    flag).
+3. Activate the environment and install this package (optionally with the `-e` flag).
     ```
     $ conda activate covid19inc-env
     $ pip install -e .
