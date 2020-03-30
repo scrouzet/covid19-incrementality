@@ -14,6 +14,9 @@ if __name__ == '__main__':
     for file in os.listdir(datafolder):
         if file.endswith(".zip"):
             extract_archives(os.path.join(datafolder, file), outputdir=tmpdir)
+            
+    for file in os.listdir(datafolder):
+        if file.startswith("INSEE_deces_"):
             preprocess_data(str.split(file, sep=".")[0], inputdir=tmpdir, outputdir=outputdir)
 
 
