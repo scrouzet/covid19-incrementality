@@ -14,9 +14,41 @@ Aim: quantify death increase due to COVID-19 in France at the department level.
 - Population data time serie from INSEE - 2020-03-27 Weekly update for Covid : https://www.insee.fr/fr/information/4470857
 - Number of admissions in hospitals due to influanza 2010-2020 from Sante Publique France : (https://www.santepubliquefrance.fr/)
 
+## List of files : 
+- Deces_yyyy-yyyy.zip = civil status register of death, for years yyyy (death accounted for in thoses years)
+- commune.csv = list of administrative area level 3 in France
+- departments.csv = list of administrative area level 2 in France
+- INSEE - year x dept x sex x age - population.csv = historical series of population in each department, by age class and sex 
+
+## Data Model : Fields and names
+Civil status files : 
+- lastname	Last name of dead person
+- firstname	First name of dead person
+- sex	Sex of dead person (M = Male / F = Female)
+- birth_date_txt	Birth Date in text format (format YYYYMMDD). MM or DD = 00 when unknown
+- birth_commune_code	Commune code of birth place (may not exist in referrential for historical communes)
+- birth_commune_name	Commune name of birth place
+- birth_country_name	Country of birth
+- death_date_txt	Birth Date in text format (format YYYYMMDD). MM or DD = 00 when unknown
+- death_commune_code	Commune code of death(may not exist in referrential for historical communes)
+- death_register_number	Number of death in civil status register (not always a number)
+- birth_date	Valid birth date (YYYY-MM-DD) format. Empty if invalid or unknown
+- death_date	Valid death date (YYYY-MM-DD) format. Empty if invalid or unknown
+
+Geographical referential files  :
+- commune_code	Code of commune (3rd level administrative subdivision of France)
+- commune	Name of commune (3rd level administrative subdivision of France)
+- population	Headcount of population as of 01/01/2020 (estimated)
+- departement_code	Code of department (2nd level administrative subdivision of France)
+- departement	Name of department (2nd level administrative subdivision of France)
+- region_code	Code of région (1st level administrative subdivision of France)
+- region	Name of region (1st level administrative subdivision of France)
+- classe_age_5  age interval (5 years)
+
 # Methodology
 
-## Data preparation : 
+## Data preparation : (Files in/ preprocessed data/)
+File : INSEE_deces_1990_2019_byweek.csv.gz
 - Collection and concatenation of yearly death data (1990=> 2019)
 - Deleted " replaced with white space
 - retreated  dates : removed lines with invalid birth or death dates (0,72% of cases)
@@ -26,13 +58,6 @@ Aim: quantify death increase due to COVID-19 in France at the department level.
 - Grouping by death department, death date, sex, age, year of observation
 - Year 1997 and 2003 should be removed from any analysis (1997 data seem invalid and 2003 is an outlier due to specific heat wave in France in August)
 
-## Colonnes du fichier  : data/INSEE_deces_2010_2019.zip
-- year of observation (annee_comptabilisation) = year of the yearly file where the death has been accounted for. (2019 = deces_2019.txt). Please note that a yearly file contains death dates from previous yeras due to delay in data collection at insee. All files must be concatenated to get a complete view of death for a given year. Duplicate records are already removed.
-- sexe : 1 = Male / 2 = Female
-- age : age at death time
-- departement_deces : department code of the commune where death happend. Note that some department are not valid in the repository : 1% death in "99" departement, non significative death cases in "98" department. The department name and associated region is provided in the geography referential
-- date_deces : death_date
-- nb_deces : count of deceased person, grouped by (anneee_comptabilisation, sex, age, departement_code,  date_deces)
 
 ## Modélisation
 WORK IN PROGRESS
